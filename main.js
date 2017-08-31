@@ -7,7 +7,6 @@ const { URL } = require('url');
   const browser = await puppeteer.launch();
   const page = await browser.newPage();
   await page.goto('http://kun.uz', {waitUntil: 'networkidle'});
-  await page.type('puppeteer');
   await page.waitForSelector('a');
 
   const hrefs = new Set(await page.evaluate(() => {
